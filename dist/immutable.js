@@ -893,27 +893,42 @@ var LazyKeyedSequence = function LazyKeyedSequence(seqable) {
   return KeyedSequence.apply(this, arguments).toSeq();
 };
 var $LazyKeyedSequence = LazyKeyedSequence;
-($traceurRuntime.createClass)(LazyKeyedSequence, {toKeyedSeq: function() {
+($traceurRuntime.createClass)(LazyKeyedSequence, {
+  toKeyedSeq: function() {
     return this;
-  }}, {from: function(seqable) {
+  },
+  toSeq: function() {
+    return this;
+  }
+}, {from: function(seqable) {
     return $LazyKeyedSequence(sequenceFrom.apply(this, arguments));
   }}, KeyedSequence);
 var LazySetSequence = function LazySetSequence(seqable) {
   return SetSequence.apply(this, arguments).toSeq();
 };
 var $LazySetSequence = LazySetSequence;
-($traceurRuntime.createClass)(LazySetSequence, {toSetSeq: function() {
+($traceurRuntime.createClass)(LazySetSequence, {
+  toSetSeq: function() {
     return this;
-  }}, {from: function(seqable) {
+  },
+  toSeq: function() {
+    return this;
+  }
+}, {from: function(seqable) {
     return $LazySetSequence(sequenceFrom.apply(this, arguments));
   }}, SetSequence);
 var LazyIndexedSequence = function LazyIndexedSequence(seqable) {
   return IndexedSequence.apply(this, arguments).toSeq();
 };
 var $LazyIndexedSequence = LazyIndexedSequence;
-($traceurRuntime.createClass)(LazyIndexedSequence, {toIndexedSeq: function() {
+($traceurRuntime.createClass)(LazyIndexedSequence, {
+  toIndexedSeq: function() {
     return this;
-  }}, {from: function(seqable) {
+  },
+  toSeq: function() {
+    return this;
+  }
+}, {from: function(seqable) {
     return $LazyIndexedSequence(sequenceFrom.apply(this, arguments));
   }}, IndexedSequence);
 LazySequence.of = Sequence.of;
